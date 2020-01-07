@@ -318,13 +318,150 @@ class _HomepageState extends State<Homepage> {
                 ],
               ),
               SizedBox(
-                height: 10.0,
+                height: 20.0,
               ),
-              Container(
-                width: 100.0,
-                height: 200.0,
-                color: Colors.teal,
-              )
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      height: 125.0,
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).accentColor,
+                          borderRadius: BorderRadius.circular(10.0)),
+                      child: Center(
+                        child: Container(
+                          width: 125.0 / 2.0,
+                          height: 125.0 / 2.0,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Theme.of(context).primaryColor,
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.black.withOpacity(0.25),
+                                    offset: new Offset(0, 0.75),
+                                    blurRadius: 10.0)
+                              ]),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                      flex: 3,
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            height: 110.0,
+                            decoration: BoxDecoration(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(10.0),
+                                    bottomRight: Radius.circular(10.0)),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Theme.of(context)
+                                          .accentColor
+                                          .withOpacity(0.25),
+                                      offset: new Offset(0, 0.7),
+                                      blurRadius: 5.0)
+                                ]),
+                          ),
+                          Container(
+                            height: 100.0,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 7.5, vertical: 5.0),
+                            decoration: BoxDecoration(
+                              color: Theme.of(context)
+                                  .primaryColor
+                                  .withOpacity(0.14),
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(10.0),
+                                  bottomRight: Radius.circular(10.0)),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Lorem ipsum',
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  'Lorem ipsum dolor sit amet',
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Row(children: <Widget>[
+                                      Icon(
+                                        Icons.refresh,
+                                        size: 15.0,
+                                        color: Theme.of(context).accentColor,
+                                      ),
+                                      SizedBox(
+                                        width: 1.5,
+                                      ),
+                                      Text(
+                                        'Normal',
+                                        style: GoogleFonts.montserrat(
+                                            fontSize: 13.0,
+                                            fontWeight: FontWeight.w300),
+                                      )
+                                    ]),
+                                    Row(
+                                      children: <Widget>[
+                                        Icon(
+                                          Icons.location_on,
+                                          size: 15.0,
+                                          color: Theme.of(context).accentColor,
+                                        ),
+                                        SizedBox(
+                                          width: 1.5,
+                                        ),
+                                        Text(
+                                          '1.7km',
+                                          style: GoogleFonts.montserrat(
+                                              fontSize: 13.0,
+                                              fontWeight: FontWeight.w300),
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      children: <Widget>[
+                                        Icon(
+                                          Icons.watch_later,
+                                          size: 15.0,
+                                          color: Theme.of(context).accentColor,
+                                        ),
+                                        SizedBox(
+                                          width: 1.5,
+                                        ),
+                                        Text(
+                                          '32 min',
+                                          style: GoogleFonts.montserrat(
+                                              fontSize: 13.0,
+                                              fontWeight: FontWeight.w300),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ))
+                ],
+              ),
+              SizedBox(height: 15.0)
             ],
           ),
         )
