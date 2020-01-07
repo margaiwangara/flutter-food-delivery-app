@@ -69,7 +69,7 @@ class _HomepageState extends State<Homepage> {
           ),
         ),
         SizedBox(
-          height: 25.0,
+          height: 0.0,
         )
       ],
     ));
@@ -80,7 +80,7 @@ class _HomepageState extends State<Homepage> {
       tag: 'Homepage Hero',
       child: Container(
         color: Colors.grey[300],
-        height: MediaQuery.of(context).size.height * 0.4,
+        height: MediaQuery.of(context).size.height * 0.5,
 
         // constraints: BoxConstraints(
         //     minHeight: MediaQuery.of(context).size.height - 150.0),
@@ -90,9 +90,7 @@ class _HomepageState extends State<Homepage> {
             children: <Widget>[
               Expanded(
                   child: CarouselSlider(
-                autoPlay: true,
-                autoPlayInterval: Duration(seconds: 2),
-                enableInfiniteScroll: true,
+                viewportFraction: 0.9,
                 enlargeCenterPage: true,
                 items: List.generate(10, (i) {
                   return Builder(
@@ -109,13 +107,158 @@ class _HomepageState extends State<Homepage> {
                                 borderRadius: BorderRadius.circular(10.0)),
                           ),
                           Positioned(
-                              bottom: -75.0,
+                              bottom: -50.0,
                               child: Container(
-                                width:
-                                    MediaQuery.of(context).size.width - 125.0,
-                                height: 150.0,
+                                width: MediaQuery.of(context).size.width - 90.0,
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 15.0),
+                                height: 125.0,
                                 decoration: BoxDecoration(
-                                    color: Colors.purple.withOpacity(0.75)),
+                                    color: Theme.of(context)
+                                        .scaffoldBackgroundColor,
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.black.withOpacity(0.25),
+                                          blurRadius: 10.0,
+                                          offset: new Offset(0.0, 0.75))
+                                    ],
+                                    borderRadius: BorderRadius.circular(10.0)),
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: <Widget>[
+                                    Text(
+                                      'Awesome Places',
+                                      style: GoogleFonts.montserrat(
+                                        fontSize: 22.5,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Row(
+                                          children: <Widget>[
+                                            Icon(Icons.star,
+                                                size: 15.0,
+                                                color: Theme.of(context)
+                                                    .accentColor),
+                                            Icon(Icons.star,
+                                                size: 15.0,
+                                                color: Theme.of(context)
+                                                    .accentColor),
+                                            Icon(Icons.star,
+                                                size: 15.0,
+                                                color: Theme.of(context)
+                                                    .accentColor),
+                                            Icon(Icons.star,
+                                                size: 15.0,
+                                                color: Theme.of(context)
+                                                    .accentColor),
+                                            Icon(Icons.star_border,
+                                                size: 15.0,
+                                                color: Theme.of(context)
+                                                    .accentColor),
+                                            SizedBox(
+                                              width: 2.5,
+                                            ),
+                                            Text(
+                                              '3.5',
+                                              style: GoogleFonts.montserrat(
+                                                fontSize: 15.0,
+                                                fontWeight: FontWeight.w300,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                        Row(
+                                          children: <Widget>[
+                                            Icon(
+                                              Icons.comment,
+                                              size: 15.0,
+                                              color:
+                                                  Theme.of(context).accentColor,
+                                            ),
+                                            SizedBox(
+                                              width: 2.5,
+                                            ),
+                                            Text(
+                                              '1250',
+                                              style: GoogleFonts.montserrat(
+                                                  fontSize: 15.0,
+                                                  fontWeight: FontWeight.w300),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Row(children: <Widget>[
+                                          Icon(
+                                            Icons.refresh,
+                                            size: 15.0,
+                                            color:
+                                                Theme.of(context).accentColor,
+                                          ),
+                                          SizedBox(
+                                            width: 1.5,
+                                          ),
+                                          Text(
+                                            'Normal',
+                                            style: GoogleFonts.montserrat(
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.w300),
+                                          )
+                                        ]),
+                                        Row(
+                                          children: <Widget>[
+                                            Icon(
+                                              Icons.location_on,
+                                              size: 15.0,
+                                              color:
+                                                  Theme.of(context).accentColor,
+                                            ),
+                                            SizedBox(
+                                              width: 1.5,
+                                            ),
+                                            Text(
+                                              '1.7km',
+                                              style: GoogleFonts.montserrat(
+                                                  fontSize: 14.0,
+                                                  fontWeight: FontWeight.w300),
+                                            )
+                                          ],
+                                        ),
+                                        Row(
+                                          children: <Widget>[
+                                            Icon(
+                                              Icons.watch_later,
+                                              size: 15.0,
+                                              color:
+                                                  Theme.of(context).accentColor,
+                                            ),
+                                            SizedBox(
+                                              width: 1.5,
+                                            ),
+                                            Text(
+                                              '32 min',
+                                              style: GoogleFonts.montserrat(
+                                                  fontSize: 14.0,
+                                                  fontWeight: FontWeight.w300),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
                               ))
                         ],
                       );
@@ -124,7 +267,7 @@ class _HomepageState extends State<Homepage> {
                 }),
               )),
               SizedBox(
-                height: 10.0,
+                height: 15.0,
               )
             ]),
       ),
