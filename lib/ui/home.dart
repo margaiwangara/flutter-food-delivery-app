@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,7 +22,9 @@ class _HomepageState extends State<Homepage> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         color: Theme.of(context).primaryColor.withOpacity(0.16),
-        child: _homePageHeader(),
+        child: Column(
+          children: <Widget>[_homePageHeader(), _homePageHero()],
+        ),
       )
     ]));
   }
@@ -64,8 +67,67 @@ class _HomepageState extends State<Homepage> {
               )
             ],
           ),
+        ),
+        SizedBox(
+          height: 25.0,
         )
       ],
     ));
+  }
+
+  _homePageHero() {
+    return Hero(
+      tag: 'Homepage Hero',
+      child: Container(
+        color: Colors.grey[300],
+        height: MediaQuery.of(context).size.height * 0.4,
+
+        // constraints: BoxConstraints(
+        //     minHeight: MediaQuery.of(context).size.height - 150.0),
+        child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Expanded(
+                  child: CarouselSlider(
+                autoPlay: true,
+                autoPlayInterval: Duration(seconds: 2),
+                enableInfiniteScroll: true,
+                enlargeCenterPage: true,
+                items: List.generate(10, (i) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return new Stack(
+                        alignment: Alignment.bottomCenter,
+                        overflow: Overflow.visible,
+                        children: <Widget>[
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                            decoration: BoxDecoration(
+                                color: Theme.of(context).primaryColor,
+                                borderRadius: BorderRadius.circular(10.0)),
+                          ),
+                          Positioned(
+                              bottom: -75.0,
+                              child: Container(
+                                width:
+                                    MediaQuery.of(context).size.width - 125.0,
+                                height: 150.0,
+                                decoration: BoxDecoration(
+                                    color: Colors.purple.withOpacity(0.75)),
+                              ))
+                        ],
+                      );
+                    },
+                  );
+                }),
+              )),
+              SizedBox(
+                height: 10.0,
+              )
+            ]),
+      ),
+    );
   }
 }
