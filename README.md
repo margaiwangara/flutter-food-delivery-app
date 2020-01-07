@@ -1,16 +1,9 @@
-# food_app
+# Food Delivery App UI Design
 
-A new Flutter project.
+As part of my resolution to learn Flutter this year, I decided to develop different UIs to help me get a hang of it.
 
-## Getting Started
+Food Delivery app concept design was created by Xupan(on Dribbble) and I decided to borrow the concept to use during this period as I learn Flutter.
 
-This project is a starting point for a Flutter application.
+Design Concept By **Xupan**(Dribbble)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Copyright &copy; 2019 Margai Wangara
