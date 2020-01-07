@@ -22,13 +22,16 @@ class _HomepageState extends State<Homepage> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         color: Theme.of(context).primaryColor.withOpacity(0.16),
-        child: Column(
-          children: <Widget>[
-            _homePageHeader(),
-            _homePageHero(),
-            _homePageDetails()
-          ],
-        ),
+        child: ListView(shrinkWrap: true, children: <Widget>[
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              _homePageHeader(),
+              _homePageHero(),
+              _homePageDetails()
+            ],
+          )
+        ]),
       )
     ]));
   }
@@ -39,7 +42,7 @@ class _HomepageState extends State<Homepage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         SizedBox(
-          height: 50.0,
+          height: 15.0,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -313,6 +316,14 @@ class _HomepageState extends State<Homepage> {
                         fontSize: 15.0, fontWeight: FontWeight.w300),
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                width: 100.0,
+                height: 200.0,
+                color: Colors.teal,
               )
             ],
           ),
