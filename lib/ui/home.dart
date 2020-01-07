@@ -21,7 +21,7 @@ class _HomepageState extends State<Homepage> {
       Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        color: Theme.of(context).primaryColor.withOpacity(0.16),
+        color: Theme.of(context).primaryColor.withOpacity(0.2),
         child: ListView(shrinkWrap: true, children: <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -88,9 +88,6 @@ class _HomepageState extends State<Homepage> {
       child: Container(
         // color: Colors.grey[300],
         height: MediaQuery.of(context).size.height * 0.5,
-
-        // constraints: BoxConstraints(
-        //     minHeight: MediaQuery.of(context).size.height - 150.0),
         child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -111,22 +108,29 @@ class _HomepageState extends State<Homepage> {
                             margin: const EdgeInsets.symmetric(horizontal: 5.0),
                             decoration: BoxDecoration(
                                 color: Theme.of(context).primaryColor,
-                                borderRadius: BorderRadius.circular(10.0)),
+                                borderRadius: BorderRadius.circular(10.0),
+                                image: DecorationImage(
+                                    image: AssetImage('assets/images/pic1.jpg'),
+                                    fit: BoxFit.cover,
+                                    repeat: ImageRepeat.noRepeat,
+                                    colorFilter: ColorFilter.mode(
+                                        Colors.black.withOpacity(0.35),
+                                        BlendMode.darken))),
                           ),
                           Positioned(
-                              bottom: -50.0,
+                              bottom: -45.0,
                               child: Container(
                                 width: MediaQuery.of(context).size.width - 90.0,
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 15.0),
-                                height: 125.0,
+                                height: 110.0,
                                 decoration: BoxDecoration(
                                     color: Theme.of(context)
                                         .scaffoldBackgroundColor,
                                     boxShadow: [
                                       BoxShadow(
                                           color: Colors.black.withOpacity(0.25),
-                                          blurRadius: 10.0,
+                                          blurRadius: 5.0,
                                           offset: new Offset(0.0, 0.75))
                                     ],
                                     borderRadius: BorderRadius.circular(10.0)),
@@ -139,7 +143,7 @@ class _HomepageState extends State<Homepage> {
                                     Text(
                                       'Awesome Places',
                                       style: GoogleFonts.montserrat(
-                                        fontSize: 22.5,
+                                        fontSize: 18.0,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
@@ -328,7 +332,8 @@ class _HomepageState extends State<Homepage> {
                     child: Container(
                       height: 125.0,
                       decoration: BoxDecoration(
-                          color: Theme.of(context).accentColor,
+                          color:
+                              Theme.of(context).accentColor.withOpacity(0.75),
                           borderRadius: BorderRadius.circular(10.0)),
                       child: Center(
                         child: Container(
@@ -336,7 +341,7 @@ class _HomepageState extends State<Homepage> {
                           height: 125.0 / 2.0,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Theme.of(context).primaryColor,
+                              color: Colors.white.withOpacity(0.75),
                               boxShadow: [
                                 BoxShadow(
                                     color: Colors.black.withOpacity(0.25),
@@ -354,28 +359,27 @@ class _HomepageState extends State<Homepage> {
                           Container(
                             height: 110.0,
                             decoration: BoxDecoration(
-                                color:
-                                    Theme.of(context).scaffoldBackgroundColor,
+                                color: Theme.of(context)
+                                    .scaffoldBackgroundColor
+                                    .withOpacity(0.9),
                                 borderRadius: BorderRadius.only(
                                     topRight: Radius.circular(10.0),
                                     bottomRight: Radius.circular(10.0)),
                                 boxShadow: [
                                   BoxShadow(
-                                      color: Theme.of(context)
-                                          .accentColor
-                                          .withOpacity(0.25),
-                                      offset: new Offset(0, 0.7),
+                                      color: Colors.black.withOpacity(0.15),
+                                      offset: new Offset(-0.25, 0.75),
                                       blurRadius: 5.0)
                                 ]),
                           ),
                           Container(
-                            height: 100.0,
+                            height: 110.0,
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 7.5, vertical: 5.0),
                             decoration: BoxDecoration(
                               color: Theme.of(context)
                                   .primaryColor
-                                  .withOpacity(0.14),
+                                  .withOpacity(0.3),
                               borderRadius: BorderRadius.only(
                                   topRight: Radius.circular(10.0),
                                   bottomRight: Radius.circular(10.0)),
@@ -461,7 +465,149 @@ class _HomepageState extends State<Homepage> {
                       ))
                 ],
               ),
-              SizedBox(height: 15.0)
+              SizedBox(height: 15.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      height: 125.0,
+                      decoration: BoxDecoration(
+                          color:
+                              Theme.of(context).accentColor.withOpacity(0.75),
+                          borderRadius: BorderRadius.circular(10.0)),
+                      child: Center(
+                        child: Container(
+                          width: 125.0 / 2.0,
+                          height: 125.0 / 2.0,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white.withOpacity(0.75),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.black.withOpacity(0.25),
+                                    offset: new Offset(0, 0.75),
+                                    blurRadius: 10.0)
+                              ]),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                      flex: 3,
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            height: 110.0,
+                            decoration: BoxDecoration(
+                                color: Theme.of(context)
+                                    .scaffoldBackgroundColor
+                                    .withOpacity(0.9),
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(10.0),
+                                    bottomRight: Radius.circular(10.0)),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black.withOpacity(0.15),
+                                      offset: new Offset(-0.25, 0.75),
+                                      blurRadius: 5.0)
+                                ]),
+                          ),
+                          Container(
+                            height: 110.0,
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 7.5, vertical: 5.0),
+                            decoration: BoxDecoration(
+                              color: Theme.of(context)
+                                  .primaryColor
+                                  .withOpacity(0.3),
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(10.0),
+                                  bottomRight: Radius.circular(10.0)),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Lorem ipsum',
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  'Lorem ipsum dolor sit amet',
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Row(children: <Widget>[
+                                      Icon(
+                                        Icons.refresh,
+                                        size: 15.0,
+                                        color: Theme.of(context).accentColor,
+                                      ),
+                                      SizedBox(
+                                        width: 1.5,
+                                      ),
+                                      Text(
+                                        'Normal',
+                                        style: GoogleFonts.montserrat(
+                                            fontSize: 13.0,
+                                            fontWeight: FontWeight.w300),
+                                      )
+                                    ]),
+                                    Row(
+                                      children: <Widget>[
+                                        Icon(
+                                          Icons.location_on,
+                                          size: 15.0,
+                                          color: Theme.of(context).accentColor,
+                                        ),
+                                        SizedBox(
+                                          width: 1.5,
+                                        ),
+                                        Text(
+                                          '1.7km',
+                                          style: GoogleFonts.montserrat(
+                                              fontSize: 13.0,
+                                              fontWeight: FontWeight.w300),
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      children: <Widget>[
+                                        Icon(
+                                          Icons.watch_later,
+                                          size: 15.0,
+                                          color: Theme.of(context).accentColor,
+                                        ),
+                                        SizedBox(
+                                          width: 1.5,
+                                        ),
+                                        Text(
+                                          '32 min',
+                                          style: GoogleFonts.montserrat(
+                                              fontSize: 13.0,
+                                              fontWeight: FontWeight.w300),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ))
+                ],
+              ),
+              SizedBox(height: 15.0),
             ],
           ),
         )
