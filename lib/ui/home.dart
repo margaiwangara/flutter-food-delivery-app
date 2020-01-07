@@ -23,7 +23,11 @@ class _HomepageState extends State<Homepage> {
         width: MediaQuery.of(context).size.width,
         color: Theme.of(context).primaryColor.withOpacity(0.16),
         child: Column(
-          children: <Widget>[_homePageHeader(), _homePageHero()],
+          children: <Widget>[
+            _homePageHeader(),
+            _homePageHero(),
+            _homePageDetails()
+          ],
         ),
       )
     ]));
@@ -79,7 +83,7 @@ class _HomepageState extends State<Homepage> {
     return Hero(
       tag: 'Homepage Hero',
       child: Container(
-        color: Colors.grey[300],
+        // color: Colors.grey[300],
         height: MediaQuery.of(context).size.height * 0.5,
 
         // constraints: BoxConstraints(
@@ -271,6 +275,49 @@ class _HomepageState extends State<Homepage> {
               )
             ]),
       ),
+    );
+  }
+
+  _homePageDetails() {
+    return Column(
+      children: <Widget>[
+        SizedBox(
+          height: 10.0,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Column(
+            children: <Widget>[
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Popular',
+                    style: GoogleFonts.montserrat(
+                        fontSize: 25.0, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Icon(
+                    Icons.stop,
+                    size: 10.0,
+                    color: Colors.black,
+                  ),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Text(
+                    'Food Pairing',
+                    style: GoogleFonts.montserrat(
+                        fontSize: 15.0, fontWeight: FontWeight.w300),
+                  ),
+                ],
+              )
+            ],
+          ),
+        )
+      ],
     );
   }
 }
