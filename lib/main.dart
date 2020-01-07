@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:wakelock/wakelock.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+// UIs
+import 'package:food_app/ui/home.dart';
 
 void main() => runApp(MainApp());
 
@@ -10,7 +14,11 @@ class MainApp extends StatelessWidget {
     // wakelock
     Wakelock.enable();
     return MaterialApp(
-        title: 'Flutter Demo',
-        home: Scaffold(body: Text('This is a sample text widget')));
+        title: 'Flutter Demo', theme: appTheme, home: Homepage());
   }
+
+  ThemeData appTheme = new ThemeData(
+      primaryColor: Color(0xFFFFD87D),
+      accentColor: Color(0xFF82C5BC),
+      scaffoldBackgroundColor: Color(0xFFF5F5F5));
 }
